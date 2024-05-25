@@ -1,29 +1,28 @@
 const gameboard = (() => {
-    board = [];
+    const squares = [];
     let boardWidth = 3;
 
-    for(let i = 0; i < (boardWidth ** 2); i++){
-        const squareState = {
-            player1: false,
-            player2: false
-        };
-
-        const square = {
-            state: squareState
-        }
-
-        board.push(square);
+    for(let i = 0; i < (boardWidth**2); i++){
+        const square = {player:null};
+        squares.push(square);
     }
 
-    const fillSquare = (squareLocation, state) => {
+    const occupySquare = (location,player) => {
+        squares[location].player = player;
+    }
 
-    };
+    const log = () =>{
+        console.log(squares);
+    }
 
-    return {fillSquare};
+    return{occupySquare, log};
+
 })();
 
 const players = (() => {
-    let player1;
-    let player2;
+    let playerOne = {id: 1, name: 'player one'};
+    let playerTwo = {id: 2, name:'player two'};
 
-});
+    return{playerOne,playerTwo};
+})();
+
