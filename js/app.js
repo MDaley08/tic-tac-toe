@@ -1,15 +1,6 @@
-// const bot = (() => {
-//      let randSquarePos = (gameboard.avaliableSquares().length * Math.random()) << 0;
-//      let randSquare = gameboard.avaliableSquares()[randSquarePos];
-//      let selectedSquare = Array.ine
-
-//      console.log(randSquare);
-// })();
-
 const players = (() => {
     let playerOne = {id: 1, name: 'player one', occupiedSquares:[], icon:'./images/O.png'};
     let playerTwo = {id: 2, name:'player two',occupiedSquares:[], icon: './images/X.png'};
-    let currPlayer;
 
     return{playerOne,playerTwo};
 })();
@@ -121,6 +112,8 @@ const game = (() => {
     const turn = () => {
         
         const winCon = (() => {
+            let totalSquares = 9;
+            let occupiedSquares = players.playerOne.occupiedSquares.length + players.playerOne.occupiedSquares.length;
             if(players.playerOne.occupiedSquares.length >= 3 || players.playerTwo.occupiedSquares.length >= 3){
                 if(gameboard.checkWin(players.playerOne)){
                     alert('Player One won');
@@ -131,14 +124,11 @@ const game = (() => {
                     location.reload();
                 }
             }
+            else if(occupiedSquares >= totalSquares){
+                alert('Game Was a tie!')
+            }
         })();
-
-        let totalSquares = 9;
-        let occupiedSquares = players.playerOne.occupiedSquares.length + players.playerOne.occupiedSquares.length;
-        if(occupiedSquares >= totalSquares){
-            alert('Game Was a tie!')
-        }
-
+        
         if(currPlayer === players.playerOne) currPlayer = players.playerTwo;
         else{
             currPlayer = players.playerOne
