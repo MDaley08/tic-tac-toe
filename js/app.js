@@ -7,7 +7,7 @@
 // })();
 
 const players = (() => {
-    let playerOne = {id: 1, name: 'player one', occupiedSquares:[], icon:'./images/X.png'};
+    let playerOne = {id: 1, name: 'player one', occupiedSquares:[], icon:'./images/O.png'};
     let playerTwo = {id: 2, name:'player two',occupiedSquares:[], icon: './images/X.png'};
     let currPlayer;
 
